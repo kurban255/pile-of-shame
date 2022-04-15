@@ -11,17 +11,16 @@
     <a asp-page="Create">Create New</a>
 </p>
 
-<form>
-    <p>
-        Title: <input type="text" asp-for="SearchString" />
-        <select asp-for="GameGenre" asp-items="Model.Genres">
-            <option value="">All genres</option>
-        </select>
-        <select asp-for="GamePlatform" asp-items="Model.Platforms">
-            <option value="">All platforms</option>
-        </select>
-        <input type="submit" value="Filter" />
-    </p>
+<form class="form-inline">
+    <label class="mb-4 mr-sm-2">Title:</label>
+    <input type="text" asp-for="SearchString" class="form-control mb-4 mr-sm-2" />
+    <select asp-for="GameGenre" asp-items="Model.Genres" class="form-control mb-4 mr-sm-2">
+        <option value="">All genres</option>
+    </select>
+    <select asp-for="GamePlatform" asp-items="Model.Platforms" class="form-control mb-4 mr-sm-2">
+        <option value="">All platforms</option>
+    </select>
+    <input type="submit" value="Filter" class="btn btn-primary mb-4 mr-sm-2" />
 </form>
 
 <table class="table">
