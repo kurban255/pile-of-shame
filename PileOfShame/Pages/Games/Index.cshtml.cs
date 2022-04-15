@@ -29,13 +29,24 @@ namespace PileOfShame.Pages.Games
 
         public async Task OnGetAsync()
         {
-            var games = from m in _context.GameModel
-                         select m;
+            IQueryable<string> genreQuery = from g in _context.GameModel
+                                            orderby g.Genre
+                                            select g.Genre;
+
+            var games = from g in _context.GameModel
+                         select g;
+
             if (!string.IsNullOrEmpty(SearchString))
             {
                 games = games.Where(s => s.Title.Contains(SearchString));
             }
 
+            if (!string.IsNullOrEmpty(GameGenre))
+            {
+                games = games.Where(x => x.Genre == GameGenre);
+            }
+
+            Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
             GameModel = await games.ToListAsync();
         }
     }
