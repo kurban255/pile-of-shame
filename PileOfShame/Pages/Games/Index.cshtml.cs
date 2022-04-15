@@ -36,7 +36,7 @@ namespace PileOfShame.Pages.Games
                 games = games.Where(s => s.Title.Contains(SearchString));
             }
 
-            GameModel = await _context.GameModel.ToListAsync();
+            GameModel = await games.ToListAsync();
         }
     }
 }
