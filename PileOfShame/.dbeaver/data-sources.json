@@ -1,0 +1,30 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17fe6f8ea59-310fa24320de8045": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "PileOfShameContext-2aaee317-236e-4b45-8b8a-7f400ab",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "/Users/karol/Projects/PileOfShame/PileOfShame/wwwroot/PileOfShameContext-2aaee317-236e-4b45-8b8a-7f400ab9d4d7.db",
+				"url": "jdbc:sqlite:/Users/karol/Projects/PileOfShame/PileOfShame/wwwroot/PileOfShameContext-2aaee317-236e-4b45-8b8a-7f400ab9d4d7.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
