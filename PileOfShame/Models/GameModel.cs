@@ -13,4 +13,4 @@ namespace PileOfShame.Models
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
     }
-}// aa
+}
