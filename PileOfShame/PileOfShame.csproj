@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Models\" />
     <None Remove="Pages\Games\" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
@@ -13,7 +12,6 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Pages\Games\" />
   </ItemGroup>
   <ItemGroup>
