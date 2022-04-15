@@ -13,10 +13,13 @@
 
 <form>
     <p>
-        <select asp-for="GameGenre" asp-items="Model.Genres">
-            <option value="">All</option>
-        </select>
         Title: <input type="text" asp-for="SearchString" />
+        <select asp-for="GameGenre" asp-items="Model.Genres">
+            <option value="">All genres</option>
+        </select>
+        <select asp-for="GamePlatform" asp-items="Model.Platforms">
+            <option value="">All platforms</option>
+        </select>
         <input type="submit" value="Filter" />
     </p>
 </form>

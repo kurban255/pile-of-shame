@@ -26,12 +26,19 @@ namespace PileOfShame.Pages.Games
         public SelectList Genres { get; set; }
         [BindProperty(SupportsGet = true)]
         public string GameGenre { get; set; }
+        public SelectList Platforms { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string GamePlatform { get; set; }
 
         public async Task OnGetAsync()
         {
             IQueryable<string> genreQuery = from g in _context.GameModel
                                             orderby g.Genre
                                             select g.Genre;
+
+            IQueryable<string> platformQuery = from g in _context.GameModel
+                                            orderby g.Platform
+                                            select g.Platform;
 
             var games = from g in _context.GameModel
                          select g;
@@ -46,7 +53,13 @@ namespace PileOfShame.Pages.Games
                 games = games.Where(x => x.Genre == GameGenre);
             }
 
+            if (!string.IsNullOrEmpty(GamePlatform))
+            {
+                games = games.Where(x => x.Platform == GamePlatform);
+            }
+
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
+            Platforms = new SelectList(await platformQuery.Distinct().ToListAsync());
             GameModel = await games.ToListAsync();
         }
     }
